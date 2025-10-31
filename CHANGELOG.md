@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.0.1] - 2025-10-31
+
+### Fixed
+- Fixed x-default hreflang to always point to first language (default)
+- Previously each page pointed x-default to itself, now both pages point to the primary language version
+
 ## [1.0.0] - 2025-10-30
 
 ### Added

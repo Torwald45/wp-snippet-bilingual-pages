@@ -8,7 +8,7 @@
  * @author      Torwald45
  * @link        https://github.com/Torwald45/wp-snippet-bilingual-pages
  * @license     GPL-2.0-or-later
- * @version     1.0.0
+ * @version     1.0.1
  */
 
 // Configuration: Set your second language code
@@ -243,7 +243,9 @@ add_action('wp_head', function() {
     
     echo '<link rel="alternate" hreflang="' . esc_attr($current_language) . '" href="' . esc_url($current_url) . '" />' . "\n";
     echo '<link rel="alternate" hreflang="' . esc_attr($translation_language) . '" href="' . esc_url($translation_url) . '" />' . "\n";
-    echo '<link rel="alternate" hreflang="x-default" href="' . esc_url($current_url) . '" />' . "\n";
+    // x-default always points to first language (default)
+    $default_url = ($current_post_type === 'page') ? $current_url : $translation_url;
+    echo '<link rel="alternate" hreflang="x-default" href="' . esc_url($default_url) . '" />' . "\n";
 }, 1);
 
 /**
