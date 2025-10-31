@@ -8,7 +8,7 @@
  * @author      Torwald45
  * @link        https://github.com/Torwald45/wp-snippet-bilingual-pages
  * @license     GPL-2.0-or-later
- * @version     1.0.1
+ * @version     1.0.2
  */
 
 // Configuration: Set your second language code
@@ -35,6 +35,14 @@ function torwald45_bl_get_short_code($locale) {
 function torwald45_bl_get_language_name($locale) {
     $parts = explode('-', $locale);
     return strtoupper($parts[0]);
+}
+
+/**
+ * Convert WordPress locale to hreflang format
+ * Example: pl_PL -> pl-PL
+ */
+function torwald45_bl_locale_to_hreflang($locale) {
+    return str_replace('_', '-', $locale);
 }
 
 /**
@@ -200,7 +208,8 @@ add_filter('language_attributes', function($output) {
     $second_lang_short = torwald45_bl_get_short_code(TORWALD45_BL_SECOND_LANG);
     
     if (is_page()) {
-        return 'lang="' . esc_attr(torwald45_bl_get_first_language()) . '"';
+        $first_lang = torwald45_bl_locale_to_hreflang(torwald45_bl_get_first_language());
+        return 'lang="' . esc_attr($first_lang) . '"';
     }
     
     if (is_singular('torwald45_bl_' . $second_lang_short)) {
@@ -228,14 +237,14 @@ add_action('wp_head', function() {
         return;
     }
     
-    // Determine languages
+    // Determine languages (convert to hreflang format)
     $current_post_type = get_post_type($current_id);
     if ($current_post_type === 'page') {
-        $current_language = torwald45_bl_get_first_language();
+        $current_language = torwald45_bl_locale_to_hreflang(torwald45_bl_get_first_language());
         $translation_language = TORWALD45_BL_SECOND_LANG;
     } else {
         $current_language = TORWALD45_BL_SECOND_LANG;
-        $translation_language = torwald45_bl_get_first_language();
+        $translation_language = torwald45_bl_locale_to_hreflang(torwald45_bl_get_first_language());
     }
     
     $current_url = get_permalink($current_id);

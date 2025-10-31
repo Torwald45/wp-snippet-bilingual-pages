@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.0.2] - 2025-10-31
+
+### Fixed
+- Fixed hreflang format to comply with Google standards (pl_PL -> pl-PL)
+- WordPress locale format (underscore) is now converted to hreflang format (hyphen)
+- Fixes "Document doesn't have a valid hreflang" error in PageSpeed Insights
+
+### Added
+- New function `torwald45_bl_locale_to_hreflang()` for locale conversion
+
 ## [1.0.1] - 2025-10-31
 
 ### Fixed
