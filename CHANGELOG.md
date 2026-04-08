@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 - Fixed hreflang format to comply with Google standards (pl_PL -> pl-PL)
-- WordPress locale format (underscore) is now converted to hreflang format (hyphen)
+- WP locale format (underscore) is now converted to hreflang format (hyphen)
 - Fixes "Document doesn't have a valid hreflang" error in PageSpeed Insights
 
 ### Added
@@ -31,4 +31,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Translation metabox in page editor
 - Support for page templates in second language pages
 - Unique prefixes (torwald45_bl_) for all function names, IDs, and meta keys to prevent conflicts
-- First language automatically detected from WordPress settings (Settings → General → Site Language)
+- First language automatically detected from WP settings (Settings → General → Site Language)

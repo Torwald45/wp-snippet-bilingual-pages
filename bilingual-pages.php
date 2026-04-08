@@ -2,7 +2,7 @@
 /**
  * Bilingual Pages System
  * 
- * Simple bilingual system for WordPress pages without plugins.
+ * Simple bilingual system for WP pages without plugins.
  * Creates separate post type for second language with automatic lang and hreflang management.
  * 
  * @author      Torwald45
@@ -15,7 +15,7 @@
 define('TORWALD45_BL_SECOND_LANG', 'en-GB'); // Change to 'de-DE' or other language code
 
 /**
- * Get first language from WordPress settings
+ * Get first language from WP settings
  */
 function torwald45_bl_get_first_language() {
     return get_locale();
@@ -38,7 +38,7 @@ function torwald45_bl_get_language_name($locale) {
 }
 
 /**
- * Convert WordPress locale to hreflang format
+ * Convert WP locale to hreflang format
  * Example: pl_PL -> pl-PL
  */
 function torwald45_bl_locale_to_hreflang($locale) {

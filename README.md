@@ -1,6 +1,6 @@
 # WP Snippet: Bilingual Pages
 
-Simple bilingual system for WordPress pages without plugins. Creates separate post type for second language with automatic lang and hreflang management.
+Simple bilingual system for WP pages without plugins. Creates separate post type for second language with automatic lang and hreflang management.
 
 ## Features
 
@@ -29,7 +29,7 @@ See [Issues](https://github.com/Torwald45/wp-snippet-bilingual-pages/issues) for
 
 ## Requirements
 
-- WordPress 5.0 or higher
+- WP 5.0 or higher
 - PHP 7.4 or higher
 - Site using only Pages (Posts disabled)
 
@@ -53,10 +53,10 @@ See [Issues](https://github.com/Torwald45/wp-snippet-bilingual-pages/issues) for
 ## Configuration
 
 ### First Language (Default)
-The **first language** is automatically taken from WordPress settings:
+The **first language** is automatically taken from WP settings:
 - Go to **Settings → General → Site Language**
 - Select your primary language (e.g., "Polski" for Polish)
-- This will be used for standard WordPress Pages
+- This will be used for standard WP Pages
 
 ### Second Language
 Edit the language code at the top of the snippet:
@@ -72,7 +72,7 @@ Available language codes examples:
 - `es-ES` - Spanish
 - `it-IT` - Italian
 
-**Example:** If your WordPress is set to Polish (`pl-PL`) and you configure `en-GB`:
+**Example:** If your WP is set to Polish (`pl-PL`) and you configure `en-GB`:
 - Standard Pages = Polish pages
 - Custom "Pages EN" = English pages
 
@@ -119,7 +119,7 @@ Check your page source code:
 
 ### Custom Post Type
 - Name: `torwald45_bl_[lang]` (e.g., `torwald45_bl_en`)
-- Max length: 15 characters (safe under WordPress 20-char limit)
+- Max length: 15 characters (safe under WP 20-char limit)
 - URL pattern: `/en/page-slug/`
 
 ### HTML Elements
@@ -150,7 +150,7 @@ All functions use prefix `torwald45_bl_` to prevent conflicts:
 ### Hreflang tags not appearing
 **Possible causes:**
 1. Pages are not linked (check Translation metabox)
-2. Cache (clear browser cache and any WordPress caching plugins)
+2. Cache (clear browser cache and any WP caching plugins)
 
 ### Lang attribute not changing
 **Possible cause:** Theme overrides `language_attributes` filter. Check your theme's functions.php.
